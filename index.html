@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador FIAP OPEN DAY</title>
+    <link rel="icon" href="data:image/jpeg;base64,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">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background-color: #000;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .cascade-container {
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+        }
+        .winner-modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .winner-modal.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+        .tab-button.active {
+            background-color: #c026d3; /* fuchsia-600 */
+            color: white;
+        }
+        .column {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-black text-white flex items-center justify-center min-h-screen p-4">
+
+    <div id="mainContainer" class="w-full max-w-5xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-fuchsia-500/20 rounded-2xl shadow-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Coluna da Cascata (Sorteador) -->
+        <div id="sorterColumn" class="column md:col-span-2 flex flex-col items-center justify-center space-y-6">
+            <div class="flex items-center justify-center gap-4">
+                <h1 class="text-3xl font-bold text-center text-fuchsia-400">FIAP OPEN DAY</h1>
+            </div>
+            <div class="relative w-full max-w-xl h-72 bg-black/50 rounded-lg flex flex-col items-center justify-center p-4">
+                <div id="cascadePointer" class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-16 bg-fuchsia-500 bg-opacity-20 border-y-2 border-fuchsia-400 z-10"></div>
+                <div id="cascadeContainer" class="cascade-container h-full w-full overflow-hidden">
+                    <div id="cascadeTrack" class="relative">
+                         <!-- Os nomes ou números aparecerão aqui -->
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xl justify-center">
+                <button id="spinButtonSorter" class="hidden w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-3 px-6 rounded-lg text-xl shadow-lg transform hover:scale-105 transition-transform duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed">
+                    SORTEAR
+                </button>
+                <button id="returnButton" class="hidden w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg text-xl shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    Retornar ao Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Coluna de Controle (Menu) -->
+        <div id="menuColumn" class="column flex flex-col h-full bg-gray-900/50 p-6 rounded-xl">
+            <!-- Abas de Seleção -->
+            <div class="grid grid-cols-2 gap-2 mb-4">
+                <button id="tabNames" class="tab-button w-full py-2 rounded-lg transition-colors duration-200 active">Sortear Nomes</button>
+                <button id="tabNumbers" class="tab-button w-full py-2 rounded-lg transition-colors duration-200">Sortear Números</button>
+            </div>
+
+            <!-- Painel de Nomes -->
+            <div id="namesPanel" class="flex flex-col flex-grow">
+                <h2 class="text-xl font-semibold mb-3 text-center">Configurações do Sorteio</h2>
+                <textarea id="nameInput" placeholder="Cole os nomes aqui, separados por vírgula ou um por linha." rows="3" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 mb-2"></textarea>
+                <button id="addNameButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 transform hover:scale-105 mb-4">Adicionar</button>
+                
+                <div class="grid grid-cols-2 gap-4 mb-3">
+                    <div>
+                        <label for="winnerCount" class="block text-sm font-medium text-gray-300">Quantidade a Sortear</label>
+                        <input type="number" id="winnerCount" value="1" min="1" class="w-full bg-gray-800 border border-gray-600 rounded-lg mt-1 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                    <div class="flex items-end">
+                         <div class="flex items-center justify-center gap-2 w-full">
+                            <input type="checkbox" id="removeWinnerCheckbox" class="h-4 w-4 rounded border-gray-500 bg-gray-800 text-fuchsia-600 focus:ring-fuchsia-500">
+                            <label for="removeWinnerCheckbox" class="text-sm text-gray-300">Remover vencedor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-semibold text-center">Participantes</h3>
+                    <button id="clearAllButton" class="text-sm bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-3 rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed">Limpar Tudo</button>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-3 flex-grow overflow-y-auto max-h-40 mb-4">
+                    <ul id="nameList" class="space-y-2"></ul>
+                </div>
+                 <!-- Histórico de Vencedores -->
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-semibold">Histórico</h3>
+                    <button id="clearHistoryButton" class="text-sm bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-1 px-3 rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed">Limpar Histórico</button>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-3 flex-grow overflow-y-auto max-h-24">
+                    <ul id="winnersHistoryList" class="space-y-2 text-sm"></ul>
+                </div>
+            </div>
+
+            <!-- Painel de Números -->
+            <div id="numbersPanel" class="hidden flex flex-col flex-grow">
+                 <h2 class="text-xl font-semibold mb-3 text-center">Definir Intervalo</h2>
+                 <div class="space-y-4">
+                     <div>
+                         <label for="minNumber" class="block text-sm font-medium text-gray-300">Número Mínimo</label>
+                         <input type="number" id="minNumber" value="1" class="w-full bg-gray-800 border border-gray-600 rounded-lg mt-1 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                     </div>
+                      <div>
+                         <label for="maxNumber" class="block text-sm font-medium text-gray-300">Número Máximo</label>
+                         <input type="number" id="maxNumber" value="100" class="w-full bg-gray-800 border border-gray-600 rounded-lg mt-1 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                     </div>
+                      <div>
+                        <label for="winnerCountNumbers" class="block text-sm font-medium text-gray-300">Quantidade a Sortear</label>
+                        <input type="number" id="winnerCountNumbers" value="1" min="1" class="w-full bg-gray-800 border border-gray-600 rounded-lg mt-1 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                 </div>
+            </div>
+            
+             <button id="spinButton" class="mt-auto w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-3 px-6 rounded-lg text-xl shadow-lg transform hover:scale-105 transition-transform duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed">
+                SORTEAR
+            </button>
+        </div>
+    </div>
+
+    <!-- Botões Flutuantes -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4">
+        <button id="muteButton" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-full p-3 shadow-lg z-20 transition-transform transform hover:scale-110">
+            <!-- Ícone de Som será inserido aqui -->
+        </button>
+        <button id="openMenuButton" class="hidden bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-full p-3 shadow-lg z-20 transition-transform transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        </button>
+    </div>
+
+    <!-- Modal do Vencedor -->
+    <div id="winnerModal" class="winner-modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 text-center max-w-md w-full transform">
+            <h2 id="winnerModalTitle" class="text-2xl font-bold mb-4">O vencedor é...</h2>
+            <div id="winnerText" class="text-4xl font-bold text-fuchsia-400 my-6 break-words"></div>
+            <button id="closeModalButton" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-2 px-6 rounded-lg">Fechar</button>
+        </div>
+    </div>
+    
+    <script>
+        // --- ÍCONES SVG ---
+        const soundOnIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>`;
+        const soundOffIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l-4-4m0 4l4-4" /></svg>`;
+
+        // --- ELEMENTOS DO DOM ---
+        const mainContainer = document.getElementById('mainContainer');
+        const spinButton = document.getElementById('spinButton');
+        const spinButtonSorter = document.getElementById('spinButtonSorter');
+        const returnButton = document.getElementById('returnButton');
+        const nameInput = document.getElementById('nameInput');
+        const addNameButton = document.getElementById('addNameButton');
+        const nameList = document.getElementById('nameList');
+        const clearAllButton = document.getElementById('clearAllButton');
+        const winnerModal = document.getElementById('winnerModal');
+        const winnerModalTitle = document.getElementById('winnerModalTitle');
+        const winnerText = document.getElementById('winnerText');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const tabNames = document.getElementById('tabNames');
+        const tabNumbers = document.getElementById('tabNumbers');
+        const namesPanel = document.getElementById('namesPanel');
+        const numbersPanel = document.getElementById('numbersPanel');
+        const minNumberInput = document.getElementById('minNumber');
+        const maxNumberInput = document.getElementById('maxNumber');
+        const removeWinnerCheckbox = document.getElementById('removeWinnerCheckbox');
+        const cascadeContainer = document.getElementById('cascadeContainer');
+        const cascadeTrack = document.getElementById('cascadeTrack');
+        const sorterColumn = document.getElementById('sorterColumn');
+        const menuColumn = document.getElementById('menuColumn');
+        const openMenuButton = document.getElementById('openMenuButton');
+        const winnerCountInput = document.getElementById('winnerCount');
+        const winnerCountNumbersInput = document.getElementById('winnerCountNumbers');
+        const winnersHistoryList = document.getElementById('winnersHistoryList');
+        const clearHistoryButton = document.getElementById('clearHistoryButton');
+        const muteButton = document.getElementById('muteButton');
+
+        // --- ESTADO DA APLICAÇÃO ---
+        let state = {
+            mode: 'names', // 'names' ou 'numbers'
+            names: [],
+            winners: [],
+            minNumber: 1,
+            maxNumber: 100,
+            isSpinning: false,
+            sorterVisible: false,
+            menuOpen: false,
+            isMuted: false,
+        };
+        
+        // --- CONTROLO DE ÁUDIO ---
+        let synth, noiseSynth;
+        const setupAudio = async () => {
+            if (typeof Tone === 'undefined' || synth) return;
+            await Tone.start();
+            synth = new Tone.PolySynth(Tone.Synth, {
+                oscillator: { type: "fatsawtooth", count: 3, spread: 30 },
+                envelope: { attack: 0.01, decay: 0.1, sustain: 0.5, release: 0.4, attackCurve: "exponential" },
+            }).toDestination();
+            noiseSynth = new Tone.NoiseSynth({
+                noise: { type: 'white' },
+                envelope: { attack: 0.005, decay: 0.1, sustain: 0.0 }
+            }).toDestination();
+        };
+
+        const playRollingSound = () => {
+            if (state.isMuted || !noiseSynth) return;
+            noiseSynth.triggerAttackRelease("8n");
+        };
+
+        const playWinnerSound = () => {
+            if (state.isMuted || !synth) return;
+            const now = Tone.now();
+            synth.triggerAttackRelease(["C4", "E4", "G4", "C5"], "0.5", now);
+        };
+        
+        // --- FUNÇÕES DE LAYOUT ---
+        function renderLayout() {
+            if (state.isSpinning) {
+                mainContainer.classList.add('md:grid-cols-3'); menuColumn.classList.add('hidden'); sorterColumn.classList.remove('hidden');
+                sorterColumn.classList.remove('md:col-span-2'); sorterColumn.classList.add('md:col-span-3');
+                openMenuButton.classList.add('hidden'); spinButtonSorter.classList.add('hidden'); return;
+            }
+            if (state.sorterVisible) {
+                openMenuButton.classList.remove('hidden'); sorterColumn.classList.remove('hidden');
+                if (state.menuOpen) {
+                    mainContainer.classList.add('md:grid-cols-3'); menuColumn.classList.remove('hidden'); menuColumn.classList.remove('md:col-span-3');
+                    sorterColumn.classList.add('md:col-span-2'); sorterColumn.classList.remove('md:col-span-3'); spinButtonSorter.classList.add('hidden');
+                } else {
+                    mainContainer.classList.add('md:grid-cols-3'); menuColumn.classList.add('hidden'); sorterColumn.classList.remove('md:col-span-2');
+                    sorterColumn.classList.add('md:col-span-3'); spinButtonSorter.classList.remove('hidden');
+                }
+            } else {
+                mainContainer.classList.add('md:grid-cols-3'); sorterColumn.classList.add('hidden');
+                menuColumn.classList.remove('hidden'); menuColumn.classList.add('md:col-span-3');
+                openMenuButton.classList.add('hidden');
+            }
+        }
+        
+        function populateCascadeTrack(forAnimation = false) {
+            cascadeTrack.innerHTML = ''; cascadeTrack.style.transition = 'none'; cascadeTrack.style.transform = 'translateY(0)';
+            const items = (state.mode === 'names') ? state.names.map(n => n.name) : Array.from({ length: state.maxNumber - state.minNumber + 1 }, (_, i) => i + state.minNumber);
+            if (items.length === 0) {
+                cascadeTrack.innerHTML = `<div class="cascade-item text-xl text-gray-400 h-16 flex items-center justify-center">Adicione itens para começar!</div>`; return;
+            }
+            let itemsToRender = [...items];
+            if (forAnimation && items.length > 1) {
+                let clonedItems = []; const minAnimationItems = 50; const clonesCount = Math.max(5, Math.ceil(minAnimationItems / items.length));
+                for(let i=0; i < clonesCount; i++) { clonedItems.push(...[...items].sort(() => Math.random() - 0.5)); }
+                itemsToRender = clonedItems;
+            }
+            itemsToRender.forEach(item => {
+                const div = document.createElement('div'); div.className = 'cascade-item text-3xl font-semibold h-16 flex items-center justify-center truncate px-2';
+                div.textContent = item.toString(); cascadeTrack.appendChild(div);
+            });
+        }
+
+        function startCascade() {
+            const winnerCount = parseInt(state.mode === 'names' ? winnerCountInput.value : winnerCountNumbersInput.value, 10) || 1;
+            let originalItems = (state.mode === 'names') ? [...state.names] : Array.from({ length: state.maxNumber - state.minNumber + 1 }, (_, i) => i + state.minNumber);
+            
+            if (originalItems.length === 0) return;
+
+            const drawnWinners = [];
+            const countToDraw = Math.min(winnerCount, originalItems.length);
+            for (let i = 0; i < countToDraw; i++) {
+                const winnerIndex = Math.floor(Math.random() * originalItems.length);
+                drawnWinners.push(originalItems[winnerIndex]);
+                originalItems.splice(winnerIndex, 1);
+            }
+
+            const firstWinner = drawnWinners[0];
+            const firstWinnerName = (state.mode === 'names') ? firstWinner.name : firstWinner.toString();
+            
+            populateCascadeTrack(true);
+            const itemHeight = 64; const containerHeight = cascadeContainer.offsetHeight; const animatedItems = Array.from(cascadeTrack.children).map(child => child.textContent);
+            let targetIndexInTrack = -1; const searchStartIndex = Math.floor(animatedItems.length * 0.7);
+            for(let i = searchStartIndex; i < animatedItems.length; i++) { if (animatedItems[i] === firstWinnerName) { targetIndexInTrack = i; break; } }
+            if (targetIndexInTrack === -1) { targetIndexInTrack = Math.floor(animatedItems.length * 0.7) + Math.floor(Math.random() * (state.mode === 'names' ? state.names.length : 1)); }
+            
+            const finalPosition = -(targetIndexInTrack * itemHeight) + (containerHeight / 2) - (itemHeight / 2);
+            
+            cascadeTrack.style.transition = 'none'; cascadeTrack.style.transform = 'translateY(0px)'; cascadeTrack.offsetHeight; 
+            
+            const baseDuration = 3000;
+            const dynamicDuration = Math.min(5000, originalItems.length * 50);
+            const duration = baseDuration + dynamicDuration;
+
+            cascadeTrack.style.transition = `transform ${duration}ms cubic-bezier(0.25, 0.1, 0.25, 1)`;
+            cascadeTrack.style.transform = `translateY(${finalPosition}px)`;
+            
+            const rollInterval = setInterval(playRollingSound, 100);
+
+            setTimeout(() => {
+                clearInterval(rollInterval);
+                playWinnerSound();
+                showWinner(drawnWinners);
+                
+                drawnWinners.forEach(winner => {
+                    const winnerObj = { name: (state.mode === 'names' ? winner.name : winner), createdAt: new Date().toISOString() };
+                    state.winners.unshift(winnerObj);
+                    if (state.mode === 'names' && removeWinnerCheckbox.checked) {
+                        state.names = state.names.filter(n => n.id !== winner.id);
+                    }
+                });
+                renderWinnersHistory();
+                renderNameList();
+
+                state.isSpinning = false; updateSpinButtonState(); returnButton.classList.remove('hidden'); renderLayout();
+            }, duration);
+        }
+
+        function showWinner(winners) {
+            const winnerNames = winners.map(w => (state.mode === 'names' ? w.name : w));
+            if (winnerNames.length > 1) {
+                winnerModalTitle.textContent = `Os ${winnerNames.length} Vencedores São...`;
+                winnerText.innerHTML = `<ul class="space-y-2 text-2xl">${winnerNames.map(name => `<li>${name}</li>`).join('')}</ul>`;
+            } else {
+                winnerModalTitle.textContent = "O Vencedor é...";
+                winnerText.textContent = winnerNames[0] || 'N/A';
+            }
+            winnerModal.classList.remove('hidden');
+        }
+
+        // --- FUNÇÕES DE LÓGICA E EVENTOS ---
+        function updateUI() {
+            if (state.mode === 'names') {
+                namesPanel.classList.remove('hidden'); numbersPanel.classList.add('hidden'); tabNames.classList.add('active'); tabNumbers.classList.remove('active');
+            } else {
+                namesPanel.classList.add('hidden'); numbersPanel.classList.remove('hidden'); tabNames.classList.remove('active'); tabNumbers.classList.add('active');
+            }
+            populateCascadeTrack(false); updateSpinButtonState();
+        }
+
+        function updateSpinButtonState() {
+            clearAllButton.disabled = state.names.length === 0;
+            const winnerInput = state.mode === 'names' ? winnerCountInput : winnerCountNumbersInput;
+            const totalItems = state.mode === 'names' ? state.names.length : (state.maxNumber - state.minNumber + 1);
+            winnerInput.max = totalItems > 0 ? totalItems : 1;
+
+            const isDisabled = state.isSpinning || totalItems < 1 || (state.mode === 'names' && state.names.length < parseInt(winnerInput.value,10));
+            spinButton.disabled = isDisabled; spinButtonSorter.disabled = isDisabled;
+        }
+        
+        function handleAddNames() {
+            const namesString = nameInput.value.trim(); if (!namesString) return;
+            const namesArray = namesString.split(/\s*[,|\n]\s*/).filter(name => name.length > 0);
+            if (namesArray.length === 0) return;
+            
+            namesArray.forEach(name => {
+                state.names.push({ id: crypto.randomUUID(), name: name });
+            });
+            nameInput.value = '';
+            
+            if (state.mode === 'names' && !state.isSpinning) {
+                if (!state.sorterVisible) {
+                    state.sorterVisible = true;
+                    state.menuOpen = false;
+                    renderLayout();
+                }
+            }
+            renderNameList();
+            updateUI();
+        }
+        
+        function handleDeleteName(id) {
+            state.names = state.names.filter(item => item.id !== id);
+            if (state.names.length === 0) {
+                state.sorterVisible = false;
+                state.menuOpen = true;
+                renderLayout();
+            }
+            renderNameList();
+            updateUI();
+        }
+
+        function handleClearAllNames() {
+            state.names = [];
+            state.sorterVisible = false;
+            state.menuOpen = true;
+            renderLayout();
+            renderNameList();
+            updateUI();
+        }
+
+        function handleClearHistory() {
+            state.winners = [];
+            renderWinnersHistory();
+        }
+
+        function renderNameList() {
+            nameList.innerHTML = ''; state.names.forEach(item => {
+                const li = document.createElement('li'); li.className = 'flex justify-between items-center bg-gray-900 p-2 rounded';
+                li.innerHTML = `<span class="truncate">${item.name}</span><button data-id="${item.id}" class="delete-btn text-red-500 hover:text-red-400 font-bold px-2">&times;</button>`;
+                nameList.appendChild(li);
+            });
+        }
+        function renderWinnersHistory() {
+            winnersHistoryList.innerHTML = ''; state.winners.forEach(winner => {
+                const li = document.createElement('li'); li.className = 'flex justify-between items-center bg-gray-900 p-1.5 rounded';
+                li.innerHTML = `<span class="truncate">${winner.name}</span>`;
+                winnersHistoryList.appendChild(li);
+            });
+            clearHistoryButton.disabled = state.winners.length === 0;
+        }
+        
+        const handleSorterSpinClick = () => {
+            if (state.isSpinning) return;
+            const originalItems = (state.mode === 'names') ? state.names.length : (state.maxNumber - state.minNumber + 1);
+            const countToDraw = parseInt(state.mode === 'names' ? winnerCountInput.value : winnerCountNumbersInput.value, 10);
+            if (originalItems < countToDraw) return;
+            state.isSpinning = true; returnButton.classList.add('hidden'); renderLayout(); setTimeout(startCascade, 300);
+        };
+
+        const handleMenuSpinClick = () => {
+            if (!state.sorterVisible) {
+                state.sorterVisible = true; state.menuOpen = false; renderLayout(); return;
+            }
+            handleSorterSpinClick();
+        };
+
+        function init() {
+            document.body.addEventListener('click', setupAudio, { once: true });
+            muteButton.innerHTML = state.isMuted ? soundOffIcon : soundOnIcon;
+
+            addNameButton.addEventListener('click', handleAddNames);
+            clearAllButton.addEventListener('click', handleClearAllNames);
+            clearHistoryButton.addEventListener('click', handleClearHistory);
+            
+            nameList.addEventListener('click', (e) => {
+                if (e.target.classList.contains('delete-btn')) {
+                    handleDeleteName(e.target.dataset.id);
+                }
+            });
+            
+            spinButton.addEventListener('click', handleMenuSpinClick);
+            spinButtonSorter.addEventListener('click', handleSorterSpinClick);
+
+            returnButton.addEventListener('click', () => {
+                state.menuOpen = true; renderLayout(); returnButton.classList.add('hidden'); populateCascadeTrack(false);
+            });
+            
+            openMenuButton.addEventListener('click', () => {
+                state.menuOpen = !state.menuOpen; renderLayout();
+            });
+            
+            muteButton.addEventListener('click', () => {
+                state.isMuted = !state.isMuted;
+                muteButton.innerHTML = state.isMuted ? soundOffIcon : soundOnIcon;
+            });
+
+            closeModalButton.addEventListener('click', () => {
+                winnerModal.classList.add('hidden');
+                renderLayout();
+            });
+            
+            const switchTab = (mode) => {
+                state.mode = mode;
+                if (mode === 'names') {
+                    state.sorterVisible = state.names.length > 0;
+                    state.menuOpen = !state.sorterVisible;
+                } else {
+                    state.sorterVisible = false; state.menuOpen = true;
+                }
+                renderLayout(); updateUI();
+            };
+            tabNames.addEventListener('click', () => switchTab('names'));
+            tabNumbers.addEventListener('click', () => switchTab('numbers'));
+
+            [minNumberInput, maxNumberInput, winnerCountInput, winnerCountNumbersInput].forEach(input => {
+                input.addEventListener('change', () => {
+                    state.minNumber = parseInt(minNumberInput.value, 10) || 1;
+                    state.maxNumber = parseInt(maxNumberInput.value, 10) || 100;
+                    updateSpinButtonState();
+                });
+            });
+
+            renderLayout(); updateUI();
+        }
+
+        init();
+    </script>
+</body>
+</html>
+
