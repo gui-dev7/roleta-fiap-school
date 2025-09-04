@@ -1,0 +1,31 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.cascade-container {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+}
+
+.winner-modal {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.winner-modal.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.tab-button.active {
+    background-color: #c026d3; /* fuchsia-600 */
+    color: white;
+}
+
+.column {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
